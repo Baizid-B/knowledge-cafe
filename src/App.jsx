@@ -9,7 +9,7 @@ function App() {
      <div className="max-w-screen-xl mx-auto">
         <Header></Header>
 
-        <div className="md:flex">
+        <div className="md:flex gap-4">
             <Blogs></Blogs>
             <BookMark></BookMark>
         </div>
