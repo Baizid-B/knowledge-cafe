@@ -1,8 +1,8 @@
 import { CiBookmark } from "react-icons/ci";
 
-const Blog = ({singleBlogs}) => {
+const Blog = ({singleBlogs,handleBookMarks,handleTime}) => {
 
-    const {cover,title,author_img,author,posted_date,reading_time,hashtags} = singleBlogs;
+    const {id,cover,title,author_img,author,posted_date,reading_time,hashtags} = singleBlogs;
 
     return (
         <div className="my-5 space-y-4">
@@ -14,12 +14,13 @@ const Blog = ({singleBlogs}) => {
                     <div>
                         <h1>{author}</h1>
                         <p>{posted_date}</p>
+                        <a href=""></a>
                     </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                     <div>{reading_time} Min read</div> 
-                    <div className="text-xl"><CiBookmark /> </div>
+                    <div className="text-xl cursor-pointer" onClick={() => handleBookMarks(singleBlogs)}><CiBookmark /></div>
                 </div>
             </div>
 
@@ -31,7 +32,7 @@ const Blog = ({singleBlogs}) => {
                 }
             </p>
 
-            <p className="text-[#6047EC] font-semibold underline"><a href="#">Mard as read</a></p>
+            <p className="text-[#6047EC] font-semibold underline cursor-pointer" onClick={() => handleTime(id,reading_time)}>Mark as read</p>
         </div>
     );
 };

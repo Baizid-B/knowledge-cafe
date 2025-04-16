@@ -3,7 +3,7 @@ import { useState } from "react";
 import Blog from "../Blog/Blog";
 
 
-const Blogs = () => {
+const Blogs = ({handleBookMarks,handleTime}) => {
     const [blog, setBlog] = useState([]) // useState allows emty array result is zero (0)
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const Blogs = () => {
     return (
         <div className="md:w-2/3">
             {
-                blog.map(singleBlogs => <Blog key={singleBlogs.id} singleBlogs={singleBlogs}></Blog>)
+                blog.map(singleBlogs => <Blog key={singleBlogs.id} handleTime={handleTime} singleBlogs={singleBlogs} handleBookMarks={handleBookMarks}></Blog>)
             }
         </div>
     );
